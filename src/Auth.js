@@ -21,10 +21,10 @@ class Auth extends React.Component {
       if (user) {
         //してる
         if (this._isMounted) {
-            this.setState({
-              signinCheck: true,
-              signedIn: true,
-            });
+          this.setState({
+            signinCheck: true,
+            signedIn: true,
+          });
         }
       } else {
         //してない
@@ -39,7 +39,7 @@ class Auth extends React.Component {
   }
 
   componentWillUnmount = () => {
-      this._isMounted = false;
+    this._isMounted = false;
   }
 
   render() {
@@ -47,11 +47,11 @@ class Auth extends React.Component {
     if (!this.state.signinCheck) {
       return (
         <LoadingOverlay
-            active={true}
-            spinner
-            text='Loading...'
+          active={true}
+          spinner
+          text='Loading...'
         >
-            <div style={{ height: '100vh', width: '100vw' }}></div>
+          <div style={{ height: '100vh', width: '100vw' }}></div>
         </ LoadingOverlay>
       );
     }
