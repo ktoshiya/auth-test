@@ -1,2 +1,7 @@
-FROM node:14.5.0-alpine
+# ベースイメージの作成
+FROM node:12.16.1
 WORKDIR /usr/src/app
+COPY ["package.json", "yarn.lock", "./"]
+RUN yarn install
+COPY . .
+ENTRYPOINT [ "yarn", "start" ]
